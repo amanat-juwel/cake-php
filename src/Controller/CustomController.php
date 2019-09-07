@@ -11,6 +11,12 @@ use Cake\View\Exception\MissingTemplateException;
 class CustomController extends AppController
 {
 
+    public function initialize(){
+
+        parent::initialize();
+
+        $this->viewBuilder()->layout('customLayout');
+    }
 
     public function index()
     {
@@ -40,6 +46,8 @@ class CustomController extends AppController
 
     public function contactUs($arg1 = '', $arg2 = '')
     {
+        $title = "Contact Us";
+        $this->set('title',$title);
         
         $data = [
             'param_1' => $arg1,
