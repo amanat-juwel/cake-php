@@ -53,8 +53,7 @@ class CustomController extends AppController
             'param_1' => $arg1,
             'param_2' => $arg2
         ];   
-
-        $this->set(compact("data"));
+        $this->set('data',$data);
 
     }
 }
